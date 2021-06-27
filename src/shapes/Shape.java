@@ -5,7 +5,7 @@ package shapes;
  * Represents 3 dimensional geometric shapes
  * 
  */
-public abstract class GeometricShape {
+public abstract class Shape {
 	// Attributes
     protected double height;
     

@@ -1,6 +1,6 @@
 package shapes;
 
-public class Cone extends GeometricShape {
+public class Cone extends Shape {
 	
 	private double radius;
 

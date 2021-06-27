@@ -1,6 +1,6 @@
 package shapes;
 
-public class Pyramid extends GeometricShape {
+public class Pyramid extends Shape {
 	
 	private double side;
 

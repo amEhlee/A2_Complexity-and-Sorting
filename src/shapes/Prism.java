@@ -1,6 +1,6 @@
 package shapes;
 
-public class Prism extends GeometricShape {
+public class Prism extends Shape {
 	
 	private String name; // used to guage Square v Triangular v Pentagonal etc Prisms
 	private double side;
