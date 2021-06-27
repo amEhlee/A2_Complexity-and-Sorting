@@ -6,9 +6,7 @@ public abstract class Shape implements Comparable {
 
     public abstract double calcBaseArea();
     public abstract double calcVolume();
-
+    public abstract double setHighet();
     public abstract double getHeight();
-
-    public abstract void setHeight( double height);
 
 }
