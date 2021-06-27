@@ -18,6 +18,10 @@ public class ShapeUtil implements Comparator {
 	 * @param o2 - second shape to compare
 	 */
 	public int compare(Object o1, Object o2) {
+
+		o1 = (Shape) o1;
+		o2 = (Shape) o2;
+
 		long o1Size = 0;
 		long o2Size = 0;
 		if (sortType == 1) {

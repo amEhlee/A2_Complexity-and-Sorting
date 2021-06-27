@@ -9,10 +9,12 @@ public class Cone extends Shape {
         this.radius = radius;
     }
 
+    @Override
     public double getHeight() {
         return height;
     }
 
+    @Override
     public void setHeight(double height) {
         this.height = height;
     }
