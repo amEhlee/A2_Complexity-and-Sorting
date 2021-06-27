@@ -1,6 +1,6 @@
 package shapes;
 
-public class Cylinder extends Shape {
+public class Cylinder extends Shape implements Comparable {
 
     private double height;
     private double radius;
@@ -36,5 +36,13 @@ public class Cylinder extends Shape {
     @Override
     public double calcBaseArea() {
         return Math.PI * Math.pow(radius, 2);
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Cylinder cylinder = (Cylinder) o;
+        if (height > cylinder.height) return 1;
+        else if (height < cylinder.height) return -1;
+        else return 0;
     }
 }

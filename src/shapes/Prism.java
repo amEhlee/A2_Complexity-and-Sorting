@@ -1,6 +1,6 @@
 package shapes;
 
-public abstract class Prism extends Shape {
+public abstract class Prism extends Shape implements Comparable {
 
     private double height;
     private double side;

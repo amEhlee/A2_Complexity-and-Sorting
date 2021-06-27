@@ -1,6 +1,6 @@
 package shapes;
 
-public class SquarePrism extends Prism{
+public class SquarePrism extends Prism implements Comparable {
 
     private double height;
     private double side;
@@ -36,5 +36,13 @@ public class SquarePrism extends Prism{
     @Override
     public double calcVolume() {
         return Math.pow(side, 2) * height;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        SquarePrism squarePrism = (SquarePrism) o;
+        if (height > squarePrism.height) return 1;
+        else if (height < squarePrism.height) return -1;
+        else return 0;
     }
 }

@@ -1,6 +1,6 @@
 package shapes;
 
-public class PentagonalPrism extends Prism {
+public class PentagonalPrism extends Prism implements Comparable {
 
     private double height;
     private double side;
@@ -36,5 +36,13 @@ public class PentagonalPrism extends Prism {
     @Override
     public double calcVolume() {
         return this.calcBaseArea() * height;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        PentagonalPrism pentagonalPrism = (PentagonalPrism) o;
+        if (height > pentagonalPrism.height) return 1;
+        else if (height < pentagonalPrism.height) return -1;
+        else return 0;
     }
 }
