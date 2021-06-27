@@ -1,5 +1,5 @@
 /bin/
-res/polyfor1.txt
-res/polyfor3.txt
-res/polyfor5.txt
-res/polyNameBIG.txt
+.idea/
+res/
+*.iml
+.DS_Store
