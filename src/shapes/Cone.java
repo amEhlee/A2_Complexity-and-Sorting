@@ -1,6 +1,6 @@
 package shapes;
 
-public class Cone extends Shape {
+public class Cone extends Shape implements Comparable {
     private double height;
     private double radius;
 
@@ -36,4 +36,13 @@ public class Cone extends Shape {
     public double calcBaseArea() {
         return Math.PI * Math.pow(radius, 2);
     }
+
+    @Override
+    public int compareTo(Object o) {
+        Cone cone = (Cone) o;
+        if (height > cone.height) return 1;
+        else if (height < cone.height) return -1;
+        else return 0;
+    }
+
 }

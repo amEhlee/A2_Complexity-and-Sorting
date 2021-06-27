@@ -1,6 +1,6 @@
 package shapes;
 
-public class Pyramid extends Shape {
+public class Pyramid extends Shape implements Comparable {
 
     private double height;
     private double side;
@@ -36,5 +36,13 @@ public class Pyramid extends Shape {
     @Override
     public double calcVolume() {
         return (Math.pow(side, 2) * height) / 3;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Pyramid pyramid = (Pyramid) o;
+        if (height > pyramid.height) return 1;
+        else if (height < pyramid.height) return -1;
+        else return 0;
     }
 }

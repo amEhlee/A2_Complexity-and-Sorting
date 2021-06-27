@@ -1,6 +1,6 @@
 package shapes;
 
-public class OctagonalPrism extends Prism {
+public class OctagonalPrism extends Prism implements Comparable {
 
     private double height;
     private double side;
@@ -36,5 +36,13 @@ public class OctagonalPrism extends Prism {
     @Override
     public double calcVolume() {
         return this.calcBaseArea() * height;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        OctagonalPrism octagonalPrism = (OctagonalPrism) o;
+        if (height > octagonalPrism.height) return 1;
+        else if (height < octagonalPrism.height) return -1;
+        else return 0;
     }
 }

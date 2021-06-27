@@ -1,6 +1,6 @@
 package shapes;
 
-public abstract class Shape {
+public abstract class Shape implements Comparable {
 
     private double height;
 

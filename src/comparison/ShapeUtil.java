@@ -5,7 +5,7 @@ import shapes.*;
 import java.util.Comparator;
 
 public class ShapeUtil implements Comparator {
-	private int sortType; // 0 (Default): height, 1: base area, 2: volume
+	private int sortType; // 1: base area, 2: volume
 
 	public ShapeUtil(int sortType) {
 		this.sortType = sortType;
@@ -26,15 +26,13 @@ public class ShapeUtil implements Comparator {
 		if (sortType == 1) {
 			shape1Size = shape1.calcBaseArea();
 			shape2Size = shape2.calcBaseArea();
-		} else if (sortType == 2) {
+		}
+		else {
 			shape1Size = shape1.calcVolume();
 			shape2Size = shape2.calcVolume();
-		} else {
-			shape1Size = shape1.getHeight();
-			shape2Size = shape2.getHeight();
 		}
 
-		if(shape1Size > shape2Size) return 1;
+		if (shape1Size > shape2Size) return 1;
 		else if (shape1Size < shape2Size) return -1;
 		else return 0;
 	}
