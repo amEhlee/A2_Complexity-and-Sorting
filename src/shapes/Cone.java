@@ -1,26 +1,37 @@
 package shapes;
 
 public class Cone extends Shape {
-	
-	private double radius;
+    private double height;
+    private double radius;
 
-	@Override
-	public double calcVolume() {
-		// TODO Auto-generated method stub
-		return Math.PI * Math.pow(radius, 2) * height / 3;
-	}
+    public Cone(double height, double radius) {
+        this.height = height;
+        this.radius = radius;
+    }
 
-	@Override
-	public double calcBaseArea() {
-		// TODO Auto-generated method stub
-		return Math.PI * Math.pow(radius, 2);
-	}
+    public double getHeight() {
+        return height;
+    }
 
-	public double getRadius() {
-		return radius;
-	}
+    public void setHeight(double height) {
+        this.height = height;
+    }
 
-	public void setRadius(double radius) {
-		this.radius = radius;
-	}
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double calcVolume() {
+        return (Math.PI * Math.pow(radius, 2) * height) / 3;
+    }
+
+    @Override
+    public double calcBaseArea() {
+        return Math.PI * Math.pow(radius, 2);
+    }
 }
