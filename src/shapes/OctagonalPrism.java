@@ -1,11 +1,11 @@
 package shapes;
 
-public class Pyramid extends Shape {
+public class OctagonalPrism extends Prism {
 
     private double height;
     private double side;
 
-    public Pyramid(double height, double side) {
+    public OctagonalPrism(double height, double side) {
         this.height = height;
         this.side = side;
     }
@@ -28,11 +28,11 @@ public class Pyramid extends Shape {
 
     @Override
     public double calcBaseArea() {
-        return Math.pow(side, 2);
+        return 2 * (1 + Math.sqrt(2)) * Math.pow(side, 2);
     }
 
     @Override
     public double calcVolume() {
-        return (Math.pow(side, 2) * height) / 3;
+        return this.calcBaseArea() * height;
     }
 }
