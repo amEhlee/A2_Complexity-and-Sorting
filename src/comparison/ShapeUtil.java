@@ -1,5 +1,7 @@
 package comparison;
 
+import shapes.Shape;
+
 import java.util.Comparator;
 
 public class ShapeUtil implements Comparator {
