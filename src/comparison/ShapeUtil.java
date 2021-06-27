@@ -32,7 +32,7 @@ public class ShapeUtil implements Comparator {
 		}
 
 		if(o1Size > o2Size) return 1;
-		else (o2Size < o1Size) return -1;
+		else if (o2Size < o1Size) return -1;
 		else return 0;
 	}
 
