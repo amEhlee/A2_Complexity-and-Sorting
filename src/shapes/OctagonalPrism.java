@@ -10,10 +10,12 @@ public class OctagonalPrism extends Prism {
         this.side = side;
     }
 
+    @Override
     public double getHeight() {
         return height;
     }
 
+    @Override
     public void setHeight(double height) {
         this.height = height;
     }
