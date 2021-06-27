@@ -1,1 +1,5 @@
 /bin/
+.idea/
+res/
+*.iml
+.DS_Store
