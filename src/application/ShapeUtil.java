@@ -1,6 +1,6 @@
 package comparison;
 
-import shapes.Shape;
+import shapes.*;
 
 import java.util.Comparator;
 
@@ -14,29 +14,28 @@ public class ShapeUtil implements Comparator {
 	@Override
 	/**
 	 * This compare method will be used to compare two shapes by base area / volume / height
-	 * @param o1 - first shape to compare
-	 * @param o2 - second shape to compare
+	 * @param object1 - first shape to compare
+	 * @param object2 - second shape to compare
 	 */
-	public int compare(Object o1, Object o2) {
+	public int compare(Object object1, Object object2) {
+		Shape shape1 = (Shape) object1;
+		Shape shape2 = (Shape) object2;
 
-		o1 = (Shape) o1;
-		o2 = (Shape) o2;
-
-		long o1Size = 0;
-		long o2Size = 0;
+		double shape1Size;
+		double shape2Size;
 		if (sortType == 1) {
-			o1Size = o1.calcBaseArea();
-			o2Size = o2.calcBaseArea();
+			shape1Size = shape1.calcBaseArea();
+			shape2Size = shape2.calcBaseArea();
 		} else if (sortType == 2) {
-			o1Size = o1.calcVolume();
-			o2Size = o2.calcVolume();
+			shape1Size = shape1.calcVolume();
+			shape2Size = shape2.calcVolume();
 		} else {
-			o1Size = o1.getHeight();
-			o2Size = o2.getHeight();
+			shape1Size = shape1.getHeight();
+			shape2Size = shape2.getHeight();
 		}
 
-		if(o1Size > o2Size) return 1;
-		else if (o2Size < o1Size) return -1;
+		if(shape1Size > shape2Size) return 1;
+		else if (shape1Size < shape2Size) return -1;
 		else return 0;
 	}
 
