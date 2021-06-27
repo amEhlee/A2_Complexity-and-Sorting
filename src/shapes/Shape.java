@@ -4,6 +4,9 @@ public abstract class Shape {
 
     private double height;
 
-    abstract double calcBaseArea();
-    abstract double calcVolume();
+    public abstract double calcBaseArea();
+    public abstract double calcVolume();
+
+    public abstract double getHeight();
+
 }
