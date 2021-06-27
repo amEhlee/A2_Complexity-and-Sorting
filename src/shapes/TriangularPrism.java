@@ -45,4 +45,6 @@ public class TriangularPrism extends Prism implements Comparable {
         else if (height < triangularPrism.height) return -1;
         else return 0;
     }
+
+
 }
