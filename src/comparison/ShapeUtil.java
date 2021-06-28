@@ -70,7 +70,7 @@ public class ShapeUtil implements Comparator {
 				// Find the minimum element in unsorted array
 				int min_idx = i;
 				for (int j = i+1; j < n; j++)
-					if (compare(array[j],array[min_idx]) < 0)
+					if (compare(array[j],array[min_idx]) > 0)
 						min_idx = j;
 
 				// Swap the found minimum element with the first
