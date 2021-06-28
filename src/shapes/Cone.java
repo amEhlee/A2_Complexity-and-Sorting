@@ -39,9 +39,9 @@ public class Cone extends Shape implements Comparable {
 
     @Override
     public int compareTo(Object o) {
-        Cone cone = (Cone) o;
-        if (height > cone.height) return 1;
-        else if (height < cone.height) return -1;
+        Shape shape = (Shape) o;
+        if (height > shape.getHeight()) return 1;
+        else if (height < shape.getHeight()) return -1;
         else return 0;
     }
 

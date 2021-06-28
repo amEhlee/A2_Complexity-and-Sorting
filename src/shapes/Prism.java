@@ -15,4 +15,11 @@ public abstract class Prism extends Shape implements Comparable {
         this.height = height;
     }
 
+    @Override
+    public int compareTo(Object o) {
+        Shape shape = (Shape) o;
+        if (height > shape.getHeight()) return 1;
+        else if (height < shape.getHeight()) return -1;
+        else return 0;
+    }
 }

@@ -40,9 +40,9 @@ public class SquarePrism extends Prism implements Comparable {
 
     @Override
     public int compareTo(Object o) {
-        SquarePrism squarePrism = (SquarePrism) o;
-        if (height > squarePrism.height) return 1;
-        else if (height < squarePrism.height) return -1;
+        Shape shape = (Shape) o;
+        if (height > shape.getHeight()) return 1;
+        else if (height < shape.getHeight()) return -1;
         else return 0;
     }
 }

@@ -40,9 +40,9 @@ public class Cylinder extends Shape implements Comparable {
 
     @Override
     public int compareTo(Object o) {
-        Cylinder cylinder = (Cylinder) o;
-        if (height > cylinder.height) return 1;
-        else if (height < cylinder.height) return -1;
+        Shape shape = (Shape) o;
+        if (height > shape.getHeight()) return 1;
+        else if (height < shape.getHeight()) return -1;
         else return 0;
     }
 }
