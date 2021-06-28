@@ -10,7 +10,7 @@ import java.util.Comparator;
 import java.util.StringTokenizer;
 
 public class ShapeUtil implements Comparator {
-	private int sortType; // 1: base area, 2: volume
+	private int sortType; // 0(default): height, 1: base area, 2: volume
 
 	public ShapeUtil(int sortType) {
 		this.sortType = sortType;
@@ -32,9 +32,11 @@ public class ShapeUtil implements Comparator {
 			shape1Size = shape1.calcBaseArea();
 			shape2Size = shape2.calcBaseArea();
 		}
-		else {
+		else if (sortType == 2) {
 			shape1Size = shape1.calcVolume();
 			shape2Size = shape2.calcVolume();
+		} else {
+			return shape1.compareTo(shape2);
 		}
 
 		if (shape1Size > shape2Size) return 1;
