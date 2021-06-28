@@ -1,8 +1,13 @@
 package comparison;
 
-import shapes.Shape;
+import shapes.*;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Comparator;
+import java.util.StringTokenizer;
 
 public class ShapeUtil implements Comparator {
 	private int sortType; // 1: base area, 2: volume
@@ -209,5 +214,58 @@ public class ShapeUtil implements Comparator {
 		array[j] = temp;
 	}
 
+	public Shape[] readFile(String path) {
+		Shape[] array = null;
+		Shape newShape = null;
+		String line = null;
+		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+			StringTokenizer st = new StringTokenizer(br.readLine());
 
+			// check if the first token is a proper integer that indicates the number of shapes inside the file.
+			int numberOfArray = Integer.parseInt(st.nextToken());
+			if (numberOfArray < 1) throw new IOException("Not a properly formatted file.");
+			array = new Shape[numberOfArray];
+			int i = 0;
+
+			while (st.hasMoreTokens()) {
+				String shapeType = st.nextToken();
+				double height = Double.parseDouble(st.nextToken());
+				double length = Double.parseDouble(st.nextToken());
+
+				switch (shapeType) {
+					case "Cylinder" :
+						newShape = new Cylinder(height, length);
+						break;
+					case "Cone" :
+						newShape = new Cone(height, length);
+						break;
+					case "Pyramid" :
+						newShape = new Pyramid(height, length);
+						break;
+					case "SquarePrism" :
+						newShape = new SquarePrism(height, length);
+						break;
+					case "TriangularPrism" :
+						newShape = new TriangularPrism(height, length);
+						break;
+					case "PentagonalPrism" :
+						newShape = new PentagonalPrism(height, length);
+						break;
+					case "OctagonalPrism" :
+						newShape = new OctagonalPrism(height, length);
+						break;
+					default: throw new IOException("Not a proper shape: " + shapeType);
+				}
+
+				array[i] = newShape;
+				i++;
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return array;
+	}
 }

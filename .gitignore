@@ -3,3 +3,4 @@
 res/
 *.iml
 .DS_Store
+.gitignore
