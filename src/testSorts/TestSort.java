@@ -10,12 +10,16 @@ public class TestSort {
     }
 
     public TestSort(String infile, String compareBy, String sortType) {
-        Shape[] givenArray = ShapeUtil.readFile(infile);
+        // get our array of shapes from file
+        Shape[] givenArray = ShapeUtil.readFile("res/" + infile);
 
         // convert from char format to string
         compareBy = convertCompare(compareBy);
         sortType = convertSortType(sortType);
 
+        System.out.println("COMPARE BY:" + compareBy + "\nSORT BY:" + sortType);
+
+        // run test after everythings been setup
         runTest(givenArray, sortType, compareBy);
     }
 
@@ -102,39 +106,41 @@ public class TestSort {
 	}
 
     public static String convertSortType(String given){
-        switch (given) {
+        String result = "";
+        switch (given.charAt(0)) {
 
             // convert sort types
-            case "b": given = "Bubble";
-            case "s": given = "Selection";
-            case "i": given = "Insertion";           
-            case "m": given = "Merge";
-            case "q": given = "Quick";
-            case "z": given = "Chosen";
+            case 'b': result = "Bubble"; break;
+            case 's': result = "Selection"; break;
+            case 'i': result = "Insertion"; break;          
+            case 'm': result = "Merge"; break;
+            case 'q': result = "Quick"; break;
+            case 'z': result = "Chosen"; break;
 
             default:
-                System.out.println("char is not any of the given sort types");
+                System.out.printf("char %s is not any of the given sort types", given);
                 break;
         }
 
-        return given;
+        return result;
         
     }
 
     public static String convertCompare(String given) {
-        switch (given) {
+        String result = "";
+        switch (given.charAt(0)) {
 
             // convert compare by's
-            case "v": given = "volume";
-            case "a": given = "base";
-            case "h": given = "height";
+            case 'v': result = "volume"; break;
+            case 'a': result = "base"; break;
+            case 'h': result = "height"; break;
 
             default:
-                System.out.println("char is not any of the given compare types");
+                System.out.printf("char %s is not any of the given compare types", given);
                 break;
         }
 
-        return given;
+        return result;
     }
 
 }
