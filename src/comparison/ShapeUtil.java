@@ -120,7 +120,7 @@ public class ShapeUtil implements Comparator {
 
 	}
 
-	private void merge(Shape array[], int l, int r, int m) {
+	private void merge(Shape array[], int l, int m, int r) {
 		if (l < r) {
 			// Find sizes of two subarrays to be merged
 			int n1 = m - l + 1;
@@ -144,7 +144,7 @@ public class ShapeUtil implements Comparator {
 			// Initial index of merged subarry array
 			int k = l;
 			while (i < n1 && j < n2) {
-				if (compare(L[i], R[j]) <= 0) {
+				if (compare(L[i], R[j]) >= 0) {
 					array[k] = L[i];
 					i++;
 				}
@@ -198,7 +198,7 @@ public class ShapeUtil implements Comparator {
 
 			// If current element is smaller
 			// than the pivot
-			if (compare(array[j], pivot) < 0) {
+			if (compare(array[j], pivot) > 0) {
 
 				// Increment index of
 				// smaller element
@@ -216,7 +216,7 @@ public class ShapeUtil implements Comparator {
 		array[j] = temp;
 	}
 
-	public Shape[] readFile(String path) {
+	public static Shape[] readFile(String path) {
 		Shape[] array = null;
 		Shape newShape = null;
 		String line = null;
