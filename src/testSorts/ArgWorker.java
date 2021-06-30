@@ -8,27 +8,35 @@ public class ArgWorker {
 
     public static void argParser(String[] args) {
         
-		String file = "", 
-			   sortType = "", 
-			   compareType = "";
+        // default values incase nothing is given through args TODO error checking later if given args < 3
+		String file = "polyfor1.txt", 
+			   sortType = "b", 
+			   compareType = "h";
   
 		for (String a : args) {
-  
-		   switch (Character.toLowerCase(a.charAt(0))) {
-			  case 'f':
-				 file = a.substring(1);
-				 break;
-			  case 's':
-				 sortType = String.valueOf(Character.toLowerCase(a.charAt(1)));
-				 break;
-			  case 't':
-				 compareType = String.valueOf(Character.toLowerCase(a.charAt(1)));
-				 break;
-		   
-			  default:
-				 System.out.printf("argument %s cannot be read \n", Character.toLowerCase(a.charAt(0)));
-				 break;
-		   }
+
+            // change the index we check if the given argument includes a - sign or not (shifts charAt index)
+            int checkindex;
+            if(a.charAt(0) == '-')
+                checkindex = 2;
+            else 
+                checkindex = 1;
+            
+            switch (Character.toLowerCase(a.charAt(checkindex - 1))) {
+                case 'f':
+                    file = a.substring(checkindex);
+                    break;
+                case 's':
+                    sortType = String.valueOf(Character.toLowerCase(a.charAt(checkindex)));
+                    break;
+                case 't':
+                    compareType = String.valueOf(Character.toLowerCase(a.charAt(checkindex)));
+                    break;
+            
+                default:
+                    System.out.printf("argument %s cannot be read \n", Character.toLowerCase(a.charAt(0)));
+                    break;
+            }
 		   
 		}
 
@@ -36,13 +44,19 @@ public class ArgWorker {
         compareType = convertCompare(compareType);
         sortType = convertSortType(sortType);
 
+        // error checking 
         System.out.println("COMPARE BY:" + compareType + "\nSORT BY:" + sortType);
 		
-        // create new object with update params
+        // create new object with updated params
         TestSort t = new TestSort(file, compareType, sortType);
 	}
 
-    
+    /**
+     * This method is just to convert the sortType to its expanded name e.g sortType 'b' to 'Bubble'
+     * since args only specifies the character to represent a sort
+     * @param given the starting character that was given
+     * @return returns the expanded sort name to be used later in checking sortType
+     */
     public static String convertSortType(String given){
         String result = "";
         switch (given.charAt(0)) {
@@ -53,8 +67,11 @@ public class ArgWorker {
             case 'i': result = "Insertion"; break;          
             case 'm': result = "Merge"; break;
             case 'q': result = "Quick"; break;
-            case 'z': result = "Chosen"; break;
+
+            // replace this with whatever our 6th sort is
+            case 'z': result = "TODOSort"; break;
     
+            // default case which does nothing
             default:
                 System.out.printf("char %s is not any of the given sort types", given);
                 break;
@@ -64,6 +81,11 @@ public class ArgWorker {
         
     }
     
+    /**
+     * Quick method that turns a given compareType to its expanded form to later be used in testSort
+     * @param given the character we want to convert to expanded form
+     * @return returns the expanded form of the given character
+     */
     public static String convertCompare(String given) {
         String result = "";
         switch (given.charAt(0)) {
