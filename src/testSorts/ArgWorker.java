@@ -1,11 +1,29 @@
 package testSorts;
 
+/**
+ * Class description: Smaller class used a bridge between appdriver and testSort classes. It reformats the provided command line arguments 
+ * so we can use them for later. 
+ *
+ * @author Don Laliberte
+ * @author Elie Kabengele
+ * @author Jared Smith
+ * @author Jaekyung Jeon
+ * @version June 30th 2021
+ */
 public class ArgWorker {
 
+    /**
+     * ArgWorker Constructor just takes in arguments and runs the parser method
+     * @param args provided command line arguments
+     */
     public ArgWorker(String[] args) {
         argParser(args);
     }
 
+    /**
+     * checks the given command line arguments for a txtfile, sortType and compareType
+     * @param args provided command line arguments
+     */
     public static void argParser(String[] args) {
         
         // default values incase nothing is given through args TODO error checking later if given args < 3
