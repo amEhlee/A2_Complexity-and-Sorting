@@ -45,4 +45,12 @@ public class OctagonalPrism extends Prism implements Comparable {
         else if (height < shape.getHeight()) return -1;
         else return 0;
     }
+
+    @Override
+    public String toString() {
+        return "OctagonalPrism{" +
+                "height=" + height +
+                ", side=" + side +
+                '}';
+    }
 }

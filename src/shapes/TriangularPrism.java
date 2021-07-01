@@ -46,5 +46,11 @@ public class TriangularPrism extends Prism implements Comparable {
         else return 0;
     }
 
-
+    @Override
+    public String toString() {
+        return "TriangularPrism{" +
+                "height=" + height +
+                ", side=" + side +
+                '}';
+    }
 }

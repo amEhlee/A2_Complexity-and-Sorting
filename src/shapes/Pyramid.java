@@ -45,4 +45,12 @@ public class Pyramid extends Shape implements Comparable {
         else if (height < shape.getHeight()) return -1;
         else return 0;
     }
+
+    @Override
+    public String toString() {
+        return "Pyramid{" +
+                "height=" + height +
+                ", side=" + side +
+                '}';
+    }
 }

@@ -45,4 +45,11 @@ public class Cone extends Shape implements Comparable {
         else return 0;
     }
 
+    @Override
+    public String toString() {
+        return "Cone{" +
+                "height=" + height +
+                ", radius=" + radius +
+                '}';
+    }
 }
