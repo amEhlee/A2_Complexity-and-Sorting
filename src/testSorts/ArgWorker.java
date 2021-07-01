@@ -85,10 +85,7 @@ public class ArgWorker {
             case 'i': result = "Insertion"; break;          
             case 'm': result = "Merge"; break;
             case 'q': result = "Quick"; break;
-            case 'h': result = "Heap"; break;
-
-            // replace this with whatever our 6th sort is
-            case 'z': result = "TODOSort"; break;
+            case 'z': result = "Heap"; break;
     
             // default case which does nothing
             default:
