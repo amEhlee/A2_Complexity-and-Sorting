@@ -3,7 +3,17 @@ package testSorts;
 import comparison.ShapeUtil;
 import shapes.Shape;
 
+/**
+ * This class sorts an array in a specific way and shows the time it took.
+ *
+ * @author Don Laliberte
+ * @author Elie Kabengele
+ * @author Jared Smith
+ * @author Jaekyung Jeon
+ * @version June 30th, 2021
+ * */
 public class TestSort {
+
 
     public TestSort(String infile, String compareBy, String sortType) {
         // get our array of shapes from file
@@ -13,6 +23,12 @@ public class TestSort {
         runTest(givenArray, sortType, compareBy);
     }
 
+    /**
+     * sorts an array in a specific way and shows the time it took.
+     * @param array array to be sorted
+     * @param algorithm which algorithm to use
+     * @param sort by base area/height/volume
+     */
     protected static void runTest(Shape[] array, String algorithm, String sort) {
         long startTime;
         long endTime;
