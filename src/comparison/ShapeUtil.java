@@ -19,10 +19,6 @@ import java.util.StringTokenizer;
  * @version June 30th, 2021
  *
  */
-/**
- * @author toesl
- *
- */
 public class ShapeUtil implements Comparator {
 	private int sortType; // 0(default): height, 1: base area, 2: volume
 

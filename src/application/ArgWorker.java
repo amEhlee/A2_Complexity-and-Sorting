@@ -1,4 +1,6 @@
-package testSorts;
+package application;
+
+import testSorts.TestSort;
 
 /**
  * Class description: Smaller class used a bridge between appdriver and testSort classes. It reformats the provided command line arguments 
@@ -28,8 +30,8 @@ public class ArgWorker {
         
         // default values incase nothing is given through args TODO error checking later if given args < 3
 		String file = "polyfor1.txt", 
-			   sortType = "b", 
-			   compareType = "h";
+			   sortType = "q", 
+			   compareType = "a";
   
 		for (String a : args) {
 
@@ -52,8 +54,8 @@ public class ArgWorker {
                     break;
             
                 default:
-                    System.out.printf("argument %s cannot be read \n", Character.toLowerCase(a.charAt(0)));
-                    break;
+                    System.out.printf("argument %s cannot be read defaults used instead \n", Character.toLowerCase(a.charAt(0)));
+                    return;
             }
 		   
 		}
