@@ -108,7 +108,7 @@ public class ArgWorker {
     
             // convert compare by's
             case 'v': result = "volume"; break;
-            case 'a': result = "base"; break;
+            case 'a': result = "base area"; break;
             case 'h': result = "height"; break;
     
             default:

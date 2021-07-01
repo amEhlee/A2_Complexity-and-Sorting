@@ -22,7 +22,7 @@ public class TestSort {
             shapeutil = new ShapeUtil(0);
         } else if(sort.equals("volume")) {
             shapeutil = new ShapeUtil(2);
-        } else if (sort.equals("base")) {
+        } else if (sort.equals("base area")) {
             shapeutil = new ShapeUtil(1);
         } else {
             // default to height
