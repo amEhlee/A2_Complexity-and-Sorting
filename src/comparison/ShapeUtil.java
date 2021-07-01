@@ -19,6 +19,10 @@ import java.util.StringTokenizer;
  * @version June 30th, 2021
  *
  */
+/**
+ * @author toesl
+ *
+ */
 public class ShapeUtil implements Comparator {
 	private int sortType; // 0(default): height, 1: base area, 2: volume
 
@@ -54,6 +58,10 @@ public class ShapeUtil implements Comparator {
 		else return 0;
 	}
 
+	/**
+	 * Method that bubble sorts an array of shapes in descending order
+	 * @param array contains shape objects
+	 */
 	public void bubbleSort(Shape[] array) {
 		boolean sorted = false;
 		Shape temp;
@@ -70,6 +78,9 @@ public class ShapeUtil implements Comparator {
 		}
 	}
 
+	/**
+	 * Method that selection sorts an array of shapes in descending order
+	 */
 	public void selectionSort(Shape[] array) {
 
 			int n = array.length;
@@ -94,6 +105,10 @@ public class ShapeUtil implements Comparator {
 
 	}
 
+	/**
+	 * Method that insertion sorts an array of shapes in descending order
+	 * @param array contains shape objects
+	 */
 	public void insertionSort(Shape[] array) {
 			int n = array.length;
 			for (int i = 1; i < n; ++i) {
@@ -114,12 +129,19 @@ public class ShapeUtil implements Comparator {
 
 	}
 
+
+	/**
+	 * Method that merge sorts an array of shapes in descending order
+	 * @param array contains shape objects
+	 * @param l integer index value of the left side pointer
+	 * @param r integer index value of the right side pointer
+	 */
 	public void mergeSort(Shape[] array, int l, int r) {
 		if (l < r) {
 			// Find the middle point
 			int m =l+ (r-l)/2;
 
-			// Sort first and second halves
+			// Sort first and second halves recursively
 			mergeSort(array, l, m);
 			mergeSort(array, m + 1, r);
 
@@ -130,6 +152,14 @@ public class ShapeUtil implements Comparator {
 
 	}
 
+
+	/**
+	 * Method used in conjunction with the mergeSort method that merges the partitions together
+	 * @param array contains shape objects
+	 * @param l integer index value of the left side pointer
+	 * @param m integer index value of the middle pointer
+	 * @param r integer index value of the right side pointer
+	 */
 	private void merge(Shape array[], int l, int m, int r) {
 		if (l < r) {
 			// Find sizes of two subarrays to be merged
@@ -181,6 +211,12 @@ public class ShapeUtil implements Comparator {
 		}
 	}
 
+	/**
+	 * Method that quick sorts an array of shapes in descending order
+	 * @param array contains shape objects
+	 * @param low integer value of the low element
+	 * @param high integer value of the high element
+	 */
 	public void quickSort(Shape[] array, int low, int high) {
 		if (low < high) {
 
@@ -195,6 +231,13 @@ public class ShapeUtil implements Comparator {
 		}
 	}
 
+	/**
+	 * Method that is used in conjunction with quickSort 
+	 * @param array contains shape objects
+	 * @param low integer value of the low element
+	 * @param high integer value of the high element
+	 * @return
+	 */
 	private int partition(Shape[] array, int low, int high) {
 		// pivot
 		Shape pivot = array[high];
@@ -220,12 +263,25 @@ public class ShapeUtil implements Comparator {
 		return (i + 1);
 	}
 
+	
+	/**
+	 * Method used in conjunction with the quickSort method and is used to swap two indexes in the array
+	 * @param array contains shape objects
+	 * @param i first element
+	 * @param j second element
+	 */
 	private void swap(Shape[] array, int i, int j) {
 		Shape temp = array[i];
 		array[i] = array[j];
 		array[j] = temp;
 	}
 
+	
+	/**
+	 * Reads a file containing shape objects
+	 * @param path String that contains file path
+	 * @return returns the contents of the file inside an array
+	 */
 	public static Shape[] readFile(String path) {
 		Shape[] array = null;
 		Shape newShape = null;
