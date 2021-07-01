@@ -5,7 +5,16 @@ import comparison.ShapeUtil;
 import testSorts.*;
 import shapes.*;
 
-
+/**
+ * Driver class that creates an instance of the ArgWorker object using run arguments
+ * 
+ * @author Don Laliberte
+ * @author Elie Kabengele
+ * @author Jared Smith
+ * @author Jaekyung Jeon
+ * @version June 30th, 2021
+ *
+ */
 public class AppDriver {
 
 

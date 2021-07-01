@@ -9,6 +9,16 @@ import java.io.IOException;
 import java.util.Comparator;
 import java.util.StringTokenizer;
 
+/**
+ * Class that contains utility methods to use with shapes. (Sorts,File reading, and comparing volumes/base areas)
+ * 
+ * @author Don Laliberte
+ * @author Elie Kabengele
+ * @author Jared Smith
+ * @author Jaekyung Jeon
+ * @version June 30th, 2021
+ *
+ */
 public class ShapeUtil implements Comparator {
 	private int sortType; // 0(default): height, 1: base area, 2: volume
 
