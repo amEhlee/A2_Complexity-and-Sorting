@@ -305,11 +305,11 @@ public class ShapeUtil implements Comparator {
         int r = 2 * i + 2; // right = 2*i + 2
  
         // If left child is larger than root
-        if (l < n && compare(arr[l], arr[largest]) > 0)
+        if (l < n && compare(arr[l], arr[largest]) < 0)
             largest = l;
  
         // If right child is larger than largest so far
-        if (r < n && compare(arr[r], arr[largest]) > 0)
+        if (r < n && compare(arr[r], arr[largest]) < 0)
             largest = r;
  
         // If largest is not root

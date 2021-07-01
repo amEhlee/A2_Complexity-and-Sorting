@@ -36,7 +36,7 @@ public class TestSort {
             case "Insertion" : shapeutil.insertionSort(array); break;
             case "Merge" : shapeutil.mergeSort(array, 0, array.length - 1); break;
             case "Quick" : shapeutil.quickSort(array, 0, array.length - 1); break;
-            case "Heap" : shapeutil.heapSort(array);
+            case "Heap" : shapeutil.heapSort(array); break;
             default: algorithm = "Quick"; shapeutil.quickSort(array, 0, array.length - 1); break;
         }
         endTime = System.currentTimeMillis();
