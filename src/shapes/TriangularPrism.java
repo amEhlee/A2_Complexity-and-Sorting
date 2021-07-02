@@ -46,6 +46,10 @@ public class TriangularPrism extends Prism implements Comparable {
         else return 0;
     }
 
+    /**
+     * Overidden toString method to return a string representation of the object
+     * @return String representation of the object
+     */
     @Override
     public String toString() {
         return "TriangularPrism{" +

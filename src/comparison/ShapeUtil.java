@@ -1,13 +1,8 @@
 package comparison;
 
 import shapes.*;
-
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Comparator;
-import java.util.StringTokenizer;
+import java.io.*; // BufferedReader FileNotFoundException, FileReader, IOException
+import java.util.*; // Comparator, StringTokenizer
 
 /**
  * Class that contains utility methods to use with shapes. (Sorts,File reading, and comparing volumes/base areas)
