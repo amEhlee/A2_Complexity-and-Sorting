@@ -1,12 +1,7 @@
 package application;
 
-
-import comparison.ShapeUtil;
-import testSorts.*;
-import shapes.*;
-
 /**
- * Driver class that creates an instance of the ArgWorker object using run arguments
+ * Driver class that creates an instance of the ArgWorker object using command line arguments
  * 
  * @author Don Laliberte
  * @author Elie Kabengele

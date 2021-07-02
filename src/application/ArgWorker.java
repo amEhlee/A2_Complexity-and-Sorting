@@ -28,10 +28,19 @@ public class ArgWorker {
      */
     public static void argParser(String[] args) {
         
-        // default values incase nothing is given through args TODO error checking later if given args < 3
+        // default values incase nothing is given through args
+    	int index = 1;
 		String file = "polyfor1.txt", 
 			   sortType = "q", 
 			   compareType = "a";
+		
+		// check if correct number of arguments was added
+        if(args.length < 3) {
+        	System.out.println("ERROR: Invalid number of arguments please enter one valid filename, compare type and sort type");
+        	System.exit(0);
+        	return;
+        }
+        
   
 		for (String a : args) {
 
@@ -42,6 +51,7 @@ public class ArgWorker {
             else 
                 checkindex = 1;
             
+ 
             switch (Character.toLowerCase(a.charAt(checkindex - 1))) {
                 case 'f':
                     file = a.substring(checkindex);
@@ -54,9 +64,10 @@ public class ArgWorker {
                     break;
             
                 default:
-                    System.out.printf("argument %s cannot be read defaults used instead \n", Character.toLowerCase(a.charAt(0)));
-                    return;
+                    System.out.printf("argument %s cannot be read. Preset defaults will be used in its place \n", index);
             }
+            
+            index ++;
 		   
 		}
 
@@ -65,7 +76,7 @@ public class ArgWorker {
         sortType = convertSortType(sortType);
 
         // error checking 
-        System.out.println("COMPARE BY:" + compareType + "\nSORT BY:" + sortType);
+        System.out.printf("\nCOMPARE BY: %s\nSORT BY: %s\nFILE: %s\n", compareType, sortType, file);
 		
         // create new object with updated params
         TestSort t = new TestSort(file, compareType, sortType);
@@ -91,7 +102,8 @@ public class ArgWorker {
     
             // default case which does nothing
             default:
-                System.out.printf("char %s is not any of the given sort types", given);
+            	result = "Bubble";
+                System.out.printf("char %s is not any of the given sort types. Preset Defaults will be used instead\n", given);
                 break;
         }
     
@@ -114,7 +126,8 @@ public class ArgWorker {
             case 'h': result = "height"; break;
     
             default:
-                System.out.printf("char %s is not any of the given compare types", given);
+            	result = "base area";
+                System.out.printf("char %s is not any of the given compare types. Preset Defaukts will be used instead\n", given);
                 break;
         }
     
