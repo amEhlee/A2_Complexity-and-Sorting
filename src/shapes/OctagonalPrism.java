@@ -6,9 +6,9 @@ public class OctagonalPrism extends Prism implements Comparable {
     private double side;
 
     /**
-     * Default Constructor for Cylinder. Sets up defined height and radius
+     * Default Constructor for OctogonalPrism. Sets up defined height and side
      * @param height
-     * @param radius
+     * @param side
      */
     public OctagonalPrism(double height, double side) {
         this.height = height;
@@ -46,7 +46,7 @@ public class OctagonalPrism extends Prism implements Comparable {
     }
 
     /**
-     * Calculates the base area of the Cylinder based on defined sides
+     * Calculates the base area of the OctogonalPrism based on defined sides
      * @return base area to return
      */
     @Override
@@ -55,7 +55,7 @@ public class OctagonalPrism extends Prism implements Comparable {
     }
 
     /**
-     * Calculates the volume of Cylinder based on defined height
+     * Calculates the volume of OctogonalPrism based on defined height
      * @return volume to return
     */
     @Override
