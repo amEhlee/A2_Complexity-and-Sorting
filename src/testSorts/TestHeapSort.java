@@ -11,9 +11,9 @@ public class TestHeapSort {
     	Shape[] array2 = ShapeUtil.readFile(filePath);
     	Shape[] array3 = ShapeUtil.readFile(filePath);
 
-    	TestSort.runTest(array1, "Heap", "height");
-    	TestSort.runTest(array2, "Heap", "base area");
-    	TestSort.runTest(array3, "Heap", "volume");
+		ShapeUtil.sort(array1, "Heap", "height");
+		ShapeUtil.sort(array2, "Heap", "base area");
+		ShapeUtil.sort(array3, "Heap", "volume");
     
     }
 }

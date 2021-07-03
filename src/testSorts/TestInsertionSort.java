@@ -10,8 +10,8 @@ public class TestInsertionSort {
         Shape[] array2 = ShapeUtil.readFile(filePath);
         Shape[] array3 = ShapeUtil.readFile(filePath);
 
-        TestSort.runTest(array1, "Insertion", "height");
-        TestSort.runTest(array2, "Insertion", "base area");
-        TestSort.runTest(array3, "Insertion", "volume");
+        ShapeUtil.sort(array1, "Insertion", "height");
+        ShapeUtil.sort(array2, "Insertion", "base area");
+        ShapeUtil.sort(array3, "Insertion", "volume");
     }
 }

@@ -10,8 +10,8 @@ public class TestMergeSort {
         Shape[] array2 = ShapeUtil.readFile(filePath);
         Shape[] array3 = ShapeUtil.readFile(filePath);
 
-        TestSort.runTest(array1, "Merge", "height");
-        TestSort.runTest(array2, "Merge", "base area");
-        TestSort.runTest(array3, "Merge", "volume");
+        ShapeUtil.sort(array1, "Merge", "height");
+        ShapeUtil.sort(array2, "Merge", "base area");
+        ShapeUtil.sort(array3, "Merge", "volume");
     }
 }

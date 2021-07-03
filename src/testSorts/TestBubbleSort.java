@@ -11,8 +11,8 @@ public class TestBubbleSort {
         Shape[] array2 = ShapeUtil.readFile(filePath);
         Shape[] array3 = ShapeUtil.readFile(filePath);
 
-        TestSort.runTest(array1, "Bubble", "height");
-        TestSort.runTest(array2, "Bubble", "base area");
-        TestSort.runTest(array3, "Bubble", "volume");
+        ShapeUtil.sort(array1, "Bubble", "height");
+        ShapeUtil.sort(array2, "Bubble", "base area");
+        ShapeUtil.sort(array3, "Bubble", "volume");
     }
 }

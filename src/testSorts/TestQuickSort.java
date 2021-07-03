@@ -10,8 +10,8 @@ public class TestQuickSort {
         Shape[] array2 = ShapeUtil.readFile(filePath);
         Shape[] array3 = ShapeUtil.readFile(filePath);
 
-        TestSort.runTest(array1, "Quick", "height");
-        TestSort.runTest(array2, "Quick", "base area");
-        TestSort.runTest(array3, "Quick", "volume");
+        ShapeUtil.sort(array1, "Quick", "height");
+        ShapeUtil.sort(array2, "Quick", "base area");
+        ShapeUtil.sort(array3, "Quick", "volume");
     }
 }
