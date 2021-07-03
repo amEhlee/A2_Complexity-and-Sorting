@@ -14,22 +14,13 @@ import shapes.Shape;
  * */
 public class TestSort {
 
-
-    public TestSort(String infile, String compareBy, String sortType) {
-        // get our array of shapes from file
-        Shape[] givenArray = ShapeUtil.readFile("res/" + infile);
-
-        // run test after everythings been setup
-        runTest(givenArray, sortType, compareBy);
-    }
-
     /**
      * sorts an array in a specific way and shows the time it took.
      * @param array array to be sorted
      * @param algorithm which algorithm to use
      * @param sort by base area/height/volume
      */
-    protected static void runTest(Shape[] array, String algorithm, String sort) {
+    public static void runTest(Shape[] array, String algorithm, String sort) {
         long startTime;
         long endTime;
         ShapeUtil shapeutil;

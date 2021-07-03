@@ -1,5 +1,7 @@
 package application;
 
+import comparison.ShapeUtil;
+import shapes.Shape;
 import testSorts.TestSort;
 
 /**
@@ -77,9 +79,12 @@ public class ArgWorker {
 
         // error checking 
         System.out.printf("\nCOMPARE BY: %s\nSORT BY: %s\nFILE: %s\n", compareType, sortType, file);
-		
-        // create new object with updated params
-        TestSort t = new TestSort(file, compareType, sortType);
+
+        // get our array of shapes from file
+        Shape[] array1 = ShapeUtil.readFile("res/" + file);
+
+        // run test after everythings been setup
+        TestSort.runTest(array1, sortType, compareType);
 	}
 
     /**
