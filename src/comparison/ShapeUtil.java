@@ -291,26 +291,26 @@ public class ShapeUtil implements Comparator {
     // an index in arr[]. n is size of heap
     void heapify(Shape arr[], int n, int i)
     {
-        int largest = i; // Initialize largest as root
+        int smallest = i; // Initialize smallest as root
         int l = 2 * i + 1; // left = 2*i + 1
         int r = 2 * i + 2; // right = 2*i + 2
  
-        // If left child is larger than root
-        if (l < n && compare(arr[l], arr[largest]) < 0)
-            largest = l;
+        // If left child is smaller than root
+        if (l < n && compare(arr[l], arr[smallest]) < 0)
+            smallest = l;
  
-        // If right child is larger than largest so far
-        if (r < n && compare(arr[r], arr[largest]) < 0)
-            largest = r;
+        // If right child is smaller than smallest so far
+        if (r < n && compare(arr[r], arr[smallest]) < 0)
+            smallest = r;
  
-        // If largest is not root
-        if (largest != i) {
+        // If smallest is not root
+        if (smallest != i) {
             Shape swap = arr[i];
-            arr[i] = arr[largest];
-            arr[largest] = swap;
+            arr[i] = arr[smallest];
+            arr[smallest] = swap;
  
             // Recursively heapify the affected sub-tree
-            heapify(arr, n, largest);
+            heapify(arr, n, smallest);
         }
     }
 	
