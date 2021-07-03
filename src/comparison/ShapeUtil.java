@@ -49,7 +49,7 @@ public class ShapeUtil implements Comparator {
 		else return 0;
 	}
 
-	/**
+	/** [1] Bubble Sort code sourced and modified from geeksforgeeks.com
 	 * Method that bubble sorts an array of shapes in descending order
 	 * @param array contains shape objects
 	 */
@@ -69,7 +69,7 @@ public class ShapeUtil implements Comparator {
 		}
 	}
 
-	/**
+	/** [2] Selection Sort code sourced and modified from geeksforgeeks.com
 	 * Method that selection sorts an array of shapes in descending order
 	 */
 	public void selectionSort(Shape[] array) {
@@ -96,7 +96,7 @@ public class ShapeUtil implements Comparator {
 
 	}
 
-	/**
+	/** [3] Insertion Sort code sourced and modified from geeksforgeeks.com
 	 * Method that insertion sorts an array of shapes in descending order
 	 * @param array contains shape objects
 	 */
@@ -121,7 +121,7 @@ public class ShapeUtil implements Comparator {
 	}
 
 
-	/**
+	/** [4] Merge Sort code sourced and modified from geeksforgeeks.com
 	 * Method that merge sorts an array of shapes in descending order
 	 * @param array contains shape objects
 	 * @param l integer index value of the left side pointer
@@ -144,7 +144,7 @@ public class ShapeUtil implements Comparator {
 	}
 
 
-	/**
+	/** 
 	 * Method used in conjunction with the mergeSort method that merges the partitions together
 	 * @param array contains shape objects
 	 * @param l integer index value of the left side pointer
@@ -202,7 +202,7 @@ public class ShapeUtil implements Comparator {
 		}
 	}
 
-	/**
+	/** [5] Quick Sort code sourced and modified from geeksforgeeks.com
 	 * Method that quick sorts an array of shapes in descending order
 	 * @param array contains shape objects
 	 * @param low integer value of the low element
@@ -267,6 +267,7 @@ public class ShapeUtil implements Comparator {
 		array[j] = temp;
 	}
 
+	// [6] Heap Sort code sourced and modified from geeksforgeeks.com
     public void heapSort(Shape arr[])
     {
         int n = arr.length;
